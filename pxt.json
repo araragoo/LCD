@@ -1,0 +1,18 @@
+{
+    "name": "lcd",
+    "version": "0.0.0",
+    "description": "Extension for DRV8830 Motor Driver",
+    "license": "Ara",
+    "dependencies": {
+        "core": "*"
+    },
+    "files": [
+        "README.md",
+        "lcd.ts",
+        "_locales/ja/lcd-strings.json"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "public": true
+}
