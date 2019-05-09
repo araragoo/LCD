@@ -53,12 +53,14 @@ namespace lcd {
     //% block="show string %text"
     //% weight=80
     export function showString(text: string): void {
-
-      lcdOut(0, text);
-      if ( text.lengrh() > LCD_SIZE_X ) {
-          let str = text.substring(LCD_SIZE_X, text.lengrh());
-//          lcdOut(1, text);
-      }
+        if (!initialized) {
+            initAQM();
+        }
+        lcdOut(0, text);
+        if ( text.lengrh() > LCD_SIZE_X ) {
+            let str = text.substring(LCD_SIZE_X, text.lengrh());
+            lcdOut(1, text);
+        }
 
     }
 } 
