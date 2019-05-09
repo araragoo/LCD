@@ -1,6 +1,6 @@
 //% weight=5 color=#0fbc11 icon="\uf112" block="lcd"
 namespace lcd {
-
+/*
     // lcd
     const AQM_ADDRESS = 0x3E
     const LCD_SIZE_X = 8
@@ -60,5 +60,5 @@ namespace lcd {
         }
 
     }
-
+*/
 } 
