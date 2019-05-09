@@ -63,8 +63,8 @@ namespace lcd {
         }
         lcdOut(0, text);
         if ( text.lengrh() > LCD_SIZE_X ) {
-            let str = text.substring(LCD_SIZE_X, text.lengrh());
-            lcdOut(1, text);
+   //         let str = text.substring(LCD_SIZE_X, text.lengrh());
+   //         lcdOut(1, str);
         }
     }
 } 
