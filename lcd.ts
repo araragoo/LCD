@@ -37,12 +37,12 @@ namespace lcd {
         let data = 0x80;
         if (y != 0) {
             data=0xC0;
-	}
-        i2cwrite(AQM_ADDRESS, 0x00, data); control.waitMicros(50);        
+        }
+        i2cwrite(AQM_ADDRESS, 0x00, data); control.waitMicros(50);
 	for (let i = 0; i < LCD_SIZE_X; i++ ) {
             if (text.charCodeAt(i) == 0x00) return;
-//            i2cwrite(AQM_ADDRESS, 0x40, 0x30); control.waitMicros(50);        
-            i2cwrite(AQM_ADDRESS, 0x40, charCodeAt(i)); control.waitMicros(50);        
+            i2cwrite(AQM_ADDRESS, 0x40, 0x30); control.waitMicros(50);
+            i2cwrite(AQM_ADDRESS, 0x40, charCodeAt(i)); control.waitMicros(50);
 	}
     }
 
@@ -52,12 +52,12 @@ namespace lcd {
     //% weight=80
     export function showString(text: string): void {
         if (!initialized) {
-            initAQM();
+//            initAQM();
         }
         lcdOut(0, text);
         if ( text.lengrh() > LCD_SIZE_X ) {
             let str = text.substring(LCD_SIZE_X, text.lengrh());
-            lcdOut(1, text);
+//            lcdOut(1, text);
         }
 
     }
