@@ -12,5 +12,5 @@ MIT
 (The metadata above is needed for package search.)
 
 ```package
-Motor=github.com/araragoo/QTrobo
+lcd=github.com/araragoo/LCD
 ```
