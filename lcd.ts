@@ -62,8 +62,9 @@ namespace lcd {
               initAQM();
         }
         lcdOut(0, text);
-        if ( text.length > LCD_SIZE_X ) {
-            let str = text.substring(LCD_SIZE_X, text.lengrh());
+        let n = text.length;
+        if ( n > LCD_SIZE_X ) {
+            let str = text.substring(LCD_SIZE_X, n);
             lcdOut(1, str);
         }
     }
