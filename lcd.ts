@@ -32,7 +32,7 @@ namespace lcd {
     }
 
     function lcdOut(y: number, text: string){
-/*
+
         let data = 0x80;
         if (y != 0) {
             data=0xC0;
@@ -43,7 +43,7 @@ namespace lcd {
             i2cwrite(AQM_ADDRESS, 0x40, 0x30); control.waitMicros(50);
             i2cwrite(AQM_ADDRESS, 0x40, charCodeAt(i)); control.waitMicros(50);
 	}
-*/
+
     }
 
     //  subcategory="LCD"
@@ -51,10 +51,10 @@ namespace lcd {
     //% block="show string %text"
     //% weight=80
     export function showString(text: string): void {
-//        if (!initialized) {
-//              initAQM();
-//        }
-//        lcdOut(0, text);
+        if (!initialized) {
+              initAQM();
+        }
+        lcdOut(0, text);
 //        if ( text.lengrh() > LCD_SIZE_X ) {
 //            let str = text.substring(LCD_SIZE_X, text.lengrh());
 //            lcdOut(1, text);
