@@ -36,7 +36,7 @@ namespace lcd {
         control.waitMicros(50);
         initialized = true;
     }
-/*
+
     function lcdOut(y: number, text: string){
 
         let data = 0x80;
@@ -53,7 +53,7 @@ namespace lcd {
 	}
 
     }
-*/
+
     //  subcategory="LCD"
     //% blockId="show_string"
     //% block="show string %text"
@@ -62,8 +62,6 @@ namespace lcd {
         if (!initialized) {
               initAQM();
         }
-/*
         lcdOut(0, text);
-*/
     }
 } 
