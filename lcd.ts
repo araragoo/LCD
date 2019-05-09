@@ -19,7 +19,7 @@ namespace lcd {
         let val = pins.i2cReadNumber(addr, NumberFormat.UInt8BE);
         return val;
     }
-/*
+
     function initAQM(): void {
         i2cwrite(AQM_ADDRESS, 0x00, 0x39); control.waitMicros(50);
         i2cwrite(AQM_ADDRESS, 0x00, 0x11); control.waitMicros(50);
@@ -30,7 +30,7 @@ namespace lcd {
         i2cwrite(AQM_ADDRESS, 0x00, 0x0C); control.waitMicros(50);
         initialized = true;
     }
-
+/*
     function lcdOut(y: number, text: string){
         let data = 0x80;
         if (y != 0) {
@@ -50,7 +50,7 @@ namespace lcd {
     //% weight=80
     export function showString(text: string): void {
 //        if (!initialized) {
-//            initAQM();
+            initAQM();
 //        }
 //        lcdOut(0, text);
 //        if ( text.lengrh() > LCD_SIZE_X ) {
