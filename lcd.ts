@@ -51,7 +51,7 @@ namespace lcd {
     //% weight=80
     export function showString(text: string): void {
         if (!initialized) {
-            initAQM();
+//            initAQM();
         }
         lcdOut(0, text);
         if ( text.lengrh() > LCD_SIZE_X ) {
