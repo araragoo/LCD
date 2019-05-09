@@ -38,11 +38,11 @@ namespace lcd {
     }
 
     function lcdOut(y: number, text: string){
-/*
         let data = 0x80;
         if (y != 0) {
             data=0xC0;
         }
+/*
         i2cwrite(AQM_ADDRESS, 0x00, data);
         control.waitMicros(50);
         for (let i = 0; i < LCD_SIZE_X; i++ ) {
