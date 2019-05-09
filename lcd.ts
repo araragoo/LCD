@@ -45,7 +45,7 @@ namespace lcd {
             i2cwrite(AQM_ADDRESS, 0x40, charCodeAt(i)); control.waitMicros(50);
 	}
     }
-
+*/
     //  subcategory="LCD"
     //% blockId="show_string"
     //% block="show string %text"
