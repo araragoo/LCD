@@ -33,6 +33,7 @@ namespace lcd {
 
     function lcdOut(y: number, text: string){
         let data = 0x80;
+/*
         if (y != 0) {
             data=0xC0;
         }
@@ -42,6 +43,7 @@ namespace lcd {
             i2cwrite(AQM_ADDRESS, 0x40, 0x30); control.waitMicros(50);
             i2cwrite(AQM_ADDRESS, 0x40, charCodeAt(i)); control.waitMicros(50);
 	}
+*/
     }
 
     //  subcategory="LCD"
