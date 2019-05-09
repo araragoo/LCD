@@ -1,5 +1,6 @@
 //% weight=5 color=#0fbc11 icon="\uf112" block="lcd"
 namespace lcd {
+/*
     // lcd
     const AQM_ADDRESS = 0x3E
     const LCD_SIZE_X = 8
@@ -19,7 +20,7 @@ namespace lcd {
         let val = pins.i2cReadNumber(addr, NumberFormat.UInt8BE);
         return val;
     }
-/*
+
     function initAQM(): void {
         i2cwrite(AQM_ADDRESS, 0x00, 0x39); control.waitMicros(50);
         i2cwrite(AQM_ADDRESS, 0x00, 0x11); control.waitMicros(50);
@@ -49,9 +50,9 @@ namespace lcd {
     //% block="show string %text"
     //% weight=80
     export function showString(text: string): void {
-        if (!initialized) {
+//        if (!initialized) {
 //            initAQM();
-        }
+//        }
 //        lcdOut(0, text);
 //        if ( text.lengrh() > LCD_SIZE_X ) {
 //            let str = text.substring(LCD_SIZE_X, text.lengrh());
