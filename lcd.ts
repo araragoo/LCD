@@ -38,14 +38,14 @@ namespace lcd {
         let data = 0x80;
         if (y != 0) {
             data=0xC0;
-            y=1;
 	}
+/*
         i2cwrite(AQM_ADDRESS, 0x00, data); control.waitMicros(50);        
 	for (let i = 0; i < LCD_SIZE_X; i++ ) {
             if (text.charCodeAt(i) == 0x00) return;
             i2cwrite(AQM_ADDRESS, 0x40, charCodeAt(i)); control.waitMicros(50);        
 	}
-
+*/
     }
 
     //  subcategory="LCD"
@@ -59,7 +59,7 @@ namespace lcd {
         lcdOut(0, text);
         if ( text.lengrh() > LCD_SIZE_X ) {
             let str = text.substring(LCD_SIZE_X, text.lengrh());
-//            lcdOut(1, text);
+            lcdOut(1, text);
         }
 
     }
