@@ -14,7 +14,7 @@ namespace lcd {
         buf[1] = value;
         pins.i2cWriteBuffer(addr, buf);
     }
-
+/*
     function i2cread(addr: number, reg: number) {
         pins.i2cWriteNumber(addr, reg, NumberFormat.UInt8BE);
         let val = pins.i2cReadNumber(addr, NumberFormat.UInt8BE);
@@ -45,7 +45,7 @@ namespace lcd {
             i2cwrite(AQM_ADDRESS, 0x40, charCodeAt(i)); control.waitMicros(50);
 	}
     }
-
+*/
     //  subcategory="LCD"
     //% blockId="show_string"
     //% block="show string %text"
