@@ -45,7 +45,6 @@ namespace lcd {
             data=0xC0;
         }
         i2cwrite(AQM_ADDRESS, 0x00, data);
-/*
         control.waitMicros(50);
         for (let i = 0; i < LCD_SIZE_X; i++ ) {
             if (text.charCodeAt(i) == 0x00) return;
@@ -54,7 +53,6 @@ namespace lcd {
             i2cwrite(AQM_ADDRESS, 0x40, text.charCodeAt(i));
             control.waitMicros(50);
         }
-*/
     }
 
     //  subcategory="LCD"
