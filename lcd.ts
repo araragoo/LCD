@@ -62,6 +62,7 @@ namespace lcd {
     //% block="show string %text"
     //% weight=80
     export function showString(text: string): void {
+/*
         if (!initialized) {
               initAQM();
         }
@@ -71,4 +72,5 @@ namespace lcd {
             lcdOut(1, str);
         }
     }
+*/
 } 
