@@ -22,20 +22,24 @@ namespace lcd {
     }
 
     function initAQM(): void {
+        i2cwrite(AQM_ADDRESS, 0x00, 0x38);
+        control.waitMicros(1000);
         i2cwrite(AQM_ADDRESS, 0x00, 0x39);// 拡張モード・コマンドへ
         control.waitMicros(1000);
-        i2cwrite(AQM_ADDRESS, 0x00, 0x11);
+        i2cwrite(AQM_ADDRESS, 0x00, 0x14);// 発振周波数
         control.waitMicros(1000);
-        i2cwrite(AQM_ADDRESS, 0x00, 0x70);
+        i2cwrite(AQM_ADDRESS, 0x00, 0x73);// コントラスト
         control.waitMicros(1000);
-        i2cwrite(AQM_ADDRESS, 0x00, 0x56);
+        i2cwrite(AQM_ADDRESS, 0x00, 0x56);// ブースタOFF。電圧3.3V
         control.waitMicros(1000);
         i2cwrite(AQM_ADDRESS, 0x00, 0x6C);// フォロワ・コントロール
-        control.waitMicros(200000);
+        control.waitMicros(300000);
         i2cwrite(AQM_ADDRESS, 0x00, 0x38);// ノーマル・モード・コマンドへ
         control.waitMicros(1000);
-        i2cwrite(AQM_ADDRESS, 0x00, 0x0C);// 　画面クリア
-        control.waitMicros(1000);
+        i2cwrite(AQM_ADDRESS, 0x00, 0x0C);// ディスプレイON
+        control.waitMicros(2000);
+        i2cwrite(AQM_ADDRESS, 0x00, 0x0C);//　画面クリア
+        control.waitMicros(2000);
         initialized = true;
     }
 
