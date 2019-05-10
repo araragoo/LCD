@@ -1,7 +1,7 @@
 //% weight=5 color=#0fbc11 icon="\uf112" block="lcd"
 namespace lcd {
     // lcd
-/*
+
     const AQM_ADDRESS = 0x3E
     const LCD_SIZE_X = 8
     const LCD_SIZE_Y = 2
@@ -38,7 +38,7 @@ namespace lcd {
         control.waitMicros(50);
         initialized = true;
     }
-
+/*
     function lcdOut(y: number, text: string){
         let data = 0x80;
         if (y != 0) {
@@ -60,10 +60,11 @@ namespace lcd {
     //% block="show string %text"
     //% weight=80
     export function showString(text: string): void {
-/*
+
         if (!initialized) {
               initAQM();
         }
+/*
         lcdOut(0, text);
         if ( text.lengrh() > 10 ) {
             let str = text.substring(LCD_SIZE_X, text.lengrh());
