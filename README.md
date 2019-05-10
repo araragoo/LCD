@@ -1,6 +1,6 @@
 # LCD
 
-Extension for DRV8830 Motor control ,Use with Micro:bit
+Extension for AQM0802 LCD control ,Use with Micro:bit
 
 ## License
 
