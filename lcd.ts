@@ -7,7 +7,7 @@ namespace lcd {
     const LCD_SIZE_Y = 2
 
     let initialized = false
-
+/*
     function i2cwrite(addr: number, reg: number, value: number) {
         let buf = pins.createBuffer(2);
         buf[0] = reg;
@@ -56,20 +56,21 @@ namespace lcd {
             control.waitMicros(100);
         }
     }
-
+*/
     //  subcategory="LCD"
     //% blockId="show_string"
     //% block="show string %text"
     //% weight=80
     export function showString(text: string): void {
+/*
         if (!initialized) {
               initAQM();
         }
         lcdOut(0, text);
-
         if ( text.lengrh() > LCD_SIZE_X ) {
             let str = text.substring(LCD_SIZE_X, text.lengrh());
             lcdOut(1, str);
         }
     }
+*/
 } 
