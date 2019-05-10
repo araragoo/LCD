@@ -22,36 +22,35 @@ namespace lcd {
     }
 
     function initAQM(): void {
-        i2cwrite(AQM_ADDRESS, 0x00, 0x39);
-        control.waitMicros(50);
+        i2cwrite(AQM_ADDRESS, 0x00, 0x39);// 拡張モード・コマンドへ
+        control.waitMicros(1000);
         i2cwrite(AQM_ADDRESS, 0x00, 0x11);
-        control.waitMicros(50);
+        control.waitMicros(1000);
         i2cwrite(AQM_ADDRESS, 0x00, 0x70);
-        control.waitMicros(50);
+        control.waitMicros(1000);
         i2cwrite(AQM_ADDRESS, 0x00, 0x56);
-        control.waitMicros(50);
-        i2cwrite(AQM_ADDRESS, 0x00, 0x6C);
+        control.waitMicros(1000);
+        i2cwrite(AQM_ADDRESS, 0x00, 0x6C);// フォロワ・コントロール
         control.waitMicros(200000);
-        i2cwrite(AQM_ADDRESS, 0x00, 0x38);
-        control.waitMicros(50);
-        i2cwrite(AQM_ADDRESS, 0x00, 0x0C);
-        control.waitMicros(50);
+        i2cwrite(AQM_ADDRESS, 0x00, 0x38);// ノーマル・モード・コマンドへ
+        control.waitMicros(1000);
+        i2cwrite(AQM_ADDRESS, 0x00, 0x0C);// 　画面クリア
+        control.waitMicros(1000);
         initialized = true;
     }
 
     function lcdOut(y: number, text: string){
         let data = 0x80;
         if (y != 0) {
-            data=0xC0;
+            data = 0xC0;
         }
         i2cwrite(AQM_ADDRESS, 0x00, data);
-        control.waitMicros(50);
+        control.waitMicros(1000);
         for (let i = 0; i < LCD_SIZE_X; i++ ) {
             if (text.charCodeAt(i) == 0x00) return;
-            control.waitMicros(50);
-            i2cwrite(AQM_ADDRESS, 0x40, 0x30);
+            i2cwrite(AQM_ADDRESS, 0x40, 0x41);
 //            i2cwrite(AQM_ADDRESS, 0x40, text.charCodeAt(i));
-            control.waitMicros(50);
+            control.waitMicros(100);
         }
     }
 
