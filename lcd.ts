@@ -59,14 +59,15 @@ namespace lcd {
 */
     //  subcategory="LCD"
     //% blockId="show_string"
-    //% block="show string %text"
+    //% block="show string- %text"
     //% weight=80
     export function showString(text: string): void {
         if (!initialized) {
               initAQM();
         }
-        lcdOut(0, text);
 /*
+        lcdOut(0, text);
+
         if ( text.lengrh() > LCD_SIZE_X ) {
             let str = text.substring(LCD_SIZE_X, text.lengrh());
             lcdOut(1, str);
