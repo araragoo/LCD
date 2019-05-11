@@ -47,6 +47,7 @@ namespace lcd {
         if (y != 0) {
             data = 0xC0;
         }
+        text = "12345678901234567";
         i2cwrite(AQM_ADDRESS, 0x00, data);
         control.waitMicros(1000);
         for (let i = 0; i < LCD_SIZE_X; i++ ) {
@@ -65,11 +66,12 @@ namespace lcd {
         if (!initialized) {
               initAQM();
         }
-        text = "12345678901234567";
         lcdOut(0, text);
+/*
         if ( text.lengrh() > LCD_SIZE_X ) {
             let str = text.substring(LCD_SIZE_X, text.lengrh());
             lcdOut(1, str);
         }
+*/
     }
 } 
