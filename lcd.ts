@@ -71,6 +71,6 @@ namespace lcd {
             let str = text.substring(LCD_SIZE_X, text.lengrh());
             lcdOut(1, str);
         }
-    }
 */
+    }
 } 
