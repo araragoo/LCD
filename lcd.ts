@@ -7,7 +7,7 @@ namespace lcd {
     const LCD_SIZE_Y = 2
 
     let initialized = false
-
+/*
     function i2cwrite(addr: number, reg: number, value: number) {
         let buf = pins.createBuffer(2);
         buf[0] = reg;
@@ -20,7 +20,7 @@ namespace lcd {
         let val = pins.i2cReadNumber(addr, NumberFormat.UInt8BE);
         return val;
     }
-/*
+
     function initAQM(): void {
         i2cwrite(AQM_ADDRESS, 0x00, 0x38);
         control.waitMicros(1000);
