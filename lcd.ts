@@ -42,7 +42,7 @@ namespace lcd {
         control.waitMicros(2000);
         initialized = true;
     }
-    function lcdOut(y: number, text: string){
+    function lcdOut(y: number, text: ManagedString){
         let data = 0x80;
         if (y != 0) {
             data = 0xC0;
