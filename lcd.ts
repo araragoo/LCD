@@ -49,7 +49,7 @@ namespace lcd {
         }
         i2cwrite(AQM_ADDRESS, 0x00, data);
         control.waitMicros(1000);
-        let str = text;
+        ManagedString str = text;
         for (let i = 0; i < LCD_SIZE_X; i++ ) {
 //            if (text.charAt(i) == 0x00) return;
             i2cwrite(AQM_ADDRESS, 0x40, str.charAt(i));
@@ -60,7 +60,7 @@ namespace lcd {
 
     //  subcategory="LCD"
     //% blockId="show_string"
-    //% block="show string %text"
+    //% block="show string- %text"
     //% weight=80
     export function showString(text: string): void {
         if (!initialized) {
