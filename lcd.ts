@@ -42,7 +42,7 @@ namespace lcd {
         control.waitMicros(2000);
         initialized = true;
     }
-
+/*
     function lcdOut(y: number, text: string){
         let data = 0x80;
         if (y != 0) {
@@ -56,19 +56,21 @@ namespace lcd {
             control.waitMicros(100);
         }
     }
-
+*/
     //  subcategory="LCD"
     //% blockId="show_string"
-    //% block="show string %text"
+    //% block="show string- %text"
     //% weight=80
     export function showString(text: string): void {
         if (!initialized) {
               initAQM();
         }
+/*
         lcdOut(0, text);
         if ( text.lengrh() > LCD_SIZE_X ) {
             let str = text.substring(LCD_SIZE_X, text.lengrh());
             lcdOut(1, str);
         }
+*/
     }
 } 
