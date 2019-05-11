@@ -49,7 +49,7 @@ namespace lcd {
         }
         i2cwrite(AQM_ADDRESS, 0x00, data);
         control.waitMicros(1000);
-        ManagedString str = "12345678";
+        let str = "12345678";
         str = text;
         for (let i = 0; i < LCD_SIZE_X; i++ ) {
 //            if (text.charAt(i) == 0x00) return;
