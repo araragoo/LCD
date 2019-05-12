@@ -65,7 +65,7 @@ namespace lcd {
         if (!initialized) {
               initAQM();
         }
-        if ("".charAt(0) == 0x00) return;
+        if (text.charCodeAt(0) == 0x00) return;
         lcdOut(0, text);
 /*
         if ( text.lengrh() > LCD_SIZE_X ) {
