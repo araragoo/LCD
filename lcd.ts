@@ -50,8 +50,10 @@ namespace lcd {
         i2cwrite(AQM_ADDRESS, 0x00, data);
         control.waitMicros(1000);
         for (let i = 0; i < LCD_SIZE_X; i++ ) {
-            if (text.charAt(i) == 0x00) return;
-            i2cwrite(AQM_ADDRESS, 0x40, text.charAt(i));
+            //if (text.charAt(i) == 0x00) return;
+            if (text.substr(i, 1) == 0x00) return;
+            //i2cwrite(AQM_ADDRESS, 0x40, text.charAt(i));
+            i2cwrite(AQM_ADDRESS, 0x40, text.substr(i, 1));
             control.waitMicros(100);
         }
 
