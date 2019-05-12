@@ -59,7 +59,7 @@ namespace lcd {
 
     //  subcategory="LCD"
     //% blockId="show_string"
-    //% block="show string- %text"
+    //% block="show string %text"
     //% weight=80
     export function showString(text: string): void {
         if (!initialized) {
@@ -72,5 +72,27 @@ namespace lcd {
             lcdOut(1, str);
         }
 
+    }
+
+    //  subcategory="LCD"
+    //% blockId="show_string_1"
+    //% block="show line1 %text"
+    //% weight=80
+    export function showString1(text: string): void {
+        if (!initialized) {
+              initAQM();
+        }
+        lcdOut(0, text);
+    }
+
+    //  subcategory="LCD"
+    //% blockId="show_string_2"
+    //% block="show line2 %text"
+    //% weight=80
+    export function showString2(text: string): void {
+        if (!initialized) {
+              initAQM();
+        }
+        lcdOut(1, text);
     }
 } 
