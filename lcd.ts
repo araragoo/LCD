@@ -63,7 +63,7 @@ namespace lcd {
 
     //  subcategory="LCD"
     //% blockId="show_string"
-    //% block="show string %text"
+    //% block="show lines %text"
     //% weight=80
     export function showString(text: string): void {
         if (!initialized) {
