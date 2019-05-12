@@ -38,7 +38,7 @@ namespace lcd {
         control.waitMicros(1000);
         i2cwrite(AQM_ADDRESS, 0x00, 0x0C);// ディスプレイON
         control.waitMicros(2000);
-        i2cwrite(AQM_ADDRESS, 0x00, 0x0C);//　画面クリア
+        i2cwrite(AQM_ADDRESS, 0x00, 0x01);//　画面クリア
         control.waitMicros(2000);
         initialized = true;
     }
