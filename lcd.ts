@@ -54,7 +54,7 @@ namespace lcd {
             if (i < text.length) {
                 i2cwrite(AQM_ADDRESS, 0x40, text.charCodeAt(i));
             } else {
-                i2cwrite(AQM_ADDRESS, 0x40, ' ');
+                i2cwrite(AQM_ADDRESS, 0x40, 0x20);
             }
             control.waitMicros(100);
         }
