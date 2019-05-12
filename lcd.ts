@@ -51,7 +51,7 @@ namespace lcd {
         control.waitMicros(1000);
         for (let i = 0; i < LCD_SIZE_X; i++ ) {
             //if (text.charAt(i) == 0x00) return;
-            //i2cwrite(AQM_ADDRESS, 0x40, text.charAt(i));
+            i2cwrite(AQM_ADDRESS, 0x40, text.charCodeAt(i));
             control.waitMicros(100);
         }
 
@@ -65,7 +65,6 @@ namespace lcd {
         if (!initialized) {
               initAQM();
         }
-        if (text.charCodeAt(0) == 0x00) return;
         lcdOut(0, text);
 /*
         if ( text.lengrh() > LCD_SIZE_X ) {
