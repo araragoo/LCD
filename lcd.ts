@@ -42,7 +42,7 @@ namespace lcd {
         control.waitMicros(2000);
         initialized = true;
     }
-    function lcdOut(y: number, text: string){
+    function lcdOutLine(y: number, text: string){
         let data = 0x80;
         if (y != 0) {
             data = 0xC0;
@@ -60,45 +60,85 @@ namespace lcd {
 
     }
 
+    function lcdOut(x: number, y: number, text: string){
+        let data = 0x80;
+        if (y != 0) {
+            data = 0xC0;
+        }
+        data |= x;
+        i2cwrite(AQM_ADDRESS, 0x00, data);
+        control.waitMicros(1000);
+        for (let i = 0; i < text.length; i++ ) {
+            i2cwrite(AQM_ADDRESS, 0x40, text.charCodeAt(i));
+            control.waitMicros(100);
+        }
+
+    }
+
     //  subcategory="LCD"
-    //% blockId="show_string"
+    //% blockId="show_lines"
     //% block="show lines %text"
     //% weight=80
-    export function showString(text: string): void {
+    export function showLiens(text: string): void {
         if (!initialized) {
               initAQM();
         }
-        lcdOut(0, text);
+        lcdOutLine(0, text);
 
         if ( text.length > LCD_SIZE_X ) {
             let str = text.substr(LCD_SIZE_X, text.length);
-            lcdOut(1, str);
+            lcdOutLine(1, str);
         } else {
             let str = '';
-            lcdOut(1, str);
+            lcdOutLine(1, str);
         }
 
     }
 
     //  subcategory="LCD"
-    //% blockId="show_string_1"
+    //% blockId="show_line_1"
     //% block="show line1 %text"
     //% weight=80
-    export function showString1(text: string): void {
+    export function showLine1(text: string): void {
         if (!initialized) {
               initAQM();
         }
-        lcdOut(0, text);
+        lcdOutLine(0, text);
     }
 
     //  subcategory="LCD"
-    //% blockId="show_string_2"
+    //% blockId="show_line_2"
     //% block="show line2 %text"
     //% weight=80
-    export function showString2(text: string): void {
+    export function showLine2(text: string): void {
         if (!initialized) {
               initAQM();
         }
-        lcdOut(1, text);
+        lcdOutLine(1, text);
+    }
+
+    //  subcategory="LCD"
+    //% blockId="show_line_2"
+    //% block="show x:0-8 %x|y:0-1 %y|string %text"
+    //% weight=80
+    //% x.min=0 x.max=7
+    //% y.min=0 y.max=1
+    export function showString(x: number, y: number, text: string): void {
+        if (!initialized) {
+              initAQM();
+        }
+        lcdOut(x, y, text);
+    }
+
+    //  subcategory="LCD"
+    //% blockId="clear"
+    //% block="clear"
+    //% weight=80
+    export function lcdClear(text: string): void {
+        if (!initialized) {
+              initAQM();
+        }
+        i2cwrite(AQM_ADDRESS, 0x00, 0x01);//Å@âÊñ ÉNÉäÉA
+        control.waitMicros(2000);    
     }
 } 
