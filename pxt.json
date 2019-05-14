@@ -1,7 +1,7 @@
 {
     "name": "lcd",
     "version": "0.0.0",
-    "description": "Extension for DRV8830 Motor Driver",
+    "description": "Extension for AQM0802 Liquid Crystal Display",
     "license": "Ara",
     "dependencies": {
         "core": "*"
