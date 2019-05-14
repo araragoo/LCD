@@ -1,6 +1,8 @@
 {
-	"Robot|block": "ロボット",
-	"Robot.Motor|block": "モータ 右:0 左:1 %channel|後方<=>前方:-100<=>100 %voltage",
-	"Robot.Servo|block": "サーボ 右靴:0 左靴:1 右足:2 左足:3 %channel|角度:-45～45 %degree",
-	"Robot.LED|block": "LED 赤:0 黄:1 緑:2 青:3 %channel|電圧:0～100 %voltage"
+	"lcd|block": "文字表示",
+	"lcd.showLiens|block": "全行の文字列 %text",
+	"lcd.showLine1|block": "1行の文字列 %text",
+	"lcd.showLine2|block": "2行の文字列 %text",
+	"lcd.showString|block": "x:0～7 %x|y:0～7 %y|の文字列 %text",
+	"lcd.lcdClear|block": "全て消す"
 }
