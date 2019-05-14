@@ -131,6 +131,19 @@ namespace lcd {
     }
 
     //  subcategory="LCD"
+    //% blockId="show_number"
+    //% block="show x:0-8 %x|y:0-1 %y|number %value"
+    //% weight=80
+    //% x.min=0 x.max=7
+    //% y.min=0 y.max=1
+    export function showNumber(x: number, y: number, value:  number): void {
+        if (!initialized) {
+              initAQM();
+        }
+        showString(x, y, value.toString());
+    }
+
+    //  subcategory="LCD"
     //% blockId="lcd_clear"
     //% block="LCD clear"
     //% weight=80
