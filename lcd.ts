@@ -131,14 +131,14 @@ namespace lcd {
     }
 
     //  subcategory="LCD"
-    //% blockId="clear"
-    //% block="clear"
+    //% blockId="lcd_clear"
+    //% block="LCD clear"
     //% weight=80
-    export function lcdClear(text: string): void {
+    export function lcdClear(): void {
         if (!initialized) {
               initAQM();
         }
         i2cwrite(AQM_ADDRESS, 0x00, 0x01);//Å@âÊñ ÉNÉäÉA
-        control.waitMicros(2000);    
+        control.waitMicros(2000);
     }
 } 
