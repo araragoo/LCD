@@ -1,4 +1,4 @@
-//% weight=5 color=#0fbc11 icon="\uf110" block="lcd"
+//% weight=5 color=#bbffff icon="\uf110" block="lcd"
 namespace lcd {
     // lcd
 
