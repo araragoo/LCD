@@ -118,7 +118,7 @@ namespace lcd {
     }
 
     //  subcategory="LCD"
-    //% blockId="show_line_2"
+    //% blockId="show_string"
     //% block="show x:0-8 %x|y:0-1 %y|string %text"
     //% weight=80
     //% x.min=0 x.max=7
