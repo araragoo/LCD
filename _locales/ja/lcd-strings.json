@@ -3,6 +3,7 @@
 	"lcd.showLiens|block": "全行の文字列 %text",
 	"lcd.showLine1|block": "1行の文字列 %text",
 	"lcd.showLine2|block": "2行の文字列 %text",
-	"lcd.showString|block": "x:0～7 %x|y:0～7 %y|の文字列 %text",
+	"lcd.showString|block": "x:0～7 %x|y:0～1 %y|の文字列 %text",
+	"lcd.showNumber|block": "x:0～7 %x|y:0～1 %y|の数値 %value",
 	"lcd.lcdClear|block": "全て消す"
 }
