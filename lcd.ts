@@ -16,7 +16,7 @@ namespace lcd {
         pins.i2cWriteBuffer(addr, buf);
     }
 
-    function i2cread(addr: number, reg: number) {
+    function i2cread(addr: number, reg: number): number {
         pins.i2cWriteNumber(addr, reg, NumberFormat.UInt8BE);
         let val = pins.i2cReadNumber(addr, NumberFormat.UInt8BE);
         return val;
@@ -25,21 +25,21 @@ namespace lcd {
     function initAQM(): void {
         i2cwrite(AQM_ADDRESS, 0x00, 0x38);
         control.waitMicros(1000);
-        i2cwrite(AQM_ADDRESS, 0x00, 0x39);// Šg’£ƒ‚[ƒhEƒRƒ}ƒ“ƒh‚Ö
+        i2cwrite(AQM_ADDRESS, 0x00, 0x39);// ï¿½gï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½hï¿½Eï¿½Rï¿½}ï¿½ï¿½ï¿½hï¿½ï¿½
         control.waitMicros(1000);
-        i2cwrite(AQM_ADDRESS, 0x00, 0x14);// ”­Uü”g”
+        i2cwrite(AQM_ADDRESS, 0x00, 0x14);// ï¿½ï¿½ï¿½Uï¿½ï¿½ï¿½gï¿½ï¿½
         control.waitMicros(1000);
-        i2cwrite(AQM_ADDRESS, 0x00, 0x73);// ƒRƒ“ƒgƒ‰ƒXƒg
+        i2cwrite(AQM_ADDRESS, 0x00, 0x73);// ï¿½Rï¿½ï¿½ï¿½gï¿½ï¿½ï¿½Xï¿½g
         control.waitMicros(1000);
-        i2cwrite(AQM_ADDRESS, 0x00, 0x56);// ƒu[ƒXƒ^OFFB“dˆ³3.3V
+        i2cwrite(AQM_ADDRESS, 0x00, 0x56);// ï¿½uï¿½[ï¿½Xï¿½^OFFï¿½Bï¿½dï¿½ï¿½3.3V
         control.waitMicros(1000);
-        i2cwrite(AQM_ADDRESS, 0x00, 0x6C);// ƒtƒHƒƒEƒRƒ“ƒgƒ[ƒ‹
+        i2cwrite(AQM_ADDRESS, 0x00, 0x6C);// ï¿½tï¿½Hï¿½ï¿½ï¿½ï¿½ï¿½Eï¿½Rï¿½ï¿½ï¿½gï¿½ï¿½ï¿½[ï¿½ï¿½
         control.waitMicros(300000);
-        i2cwrite(AQM_ADDRESS, 0x00, 0x38);// ƒm[ƒ}ƒ‹Eƒ‚[ƒhEƒRƒ}ƒ“ƒh‚Ö
+        i2cwrite(AQM_ADDRESS, 0x00, 0x38);// ï¿½mï¿½[ï¿½}ï¿½ï¿½ï¿½Eï¿½ï¿½ï¿½[ï¿½hï¿½Eï¿½Rï¿½}ï¿½ï¿½ï¿½hï¿½ï¿½
         control.waitMicros(1000);
-        i2cwrite(AQM_ADDRESS, 0x00, 0x0C);// ƒfƒBƒXƒvƒŒƒCON
+        i2cwrite(AQM_ADDRESS, 0x00, 0x0C);// ï¿½fï¿½Bï¿½Xï¿½vï¿½ï¿½ï¿½CON
         control.waitMicros(2000);
-        i2cwrite(AQM_ADDRESS, 0x00, 0x01);//@‰æ–ÊƒNƒŠƒA
+        i2cwrite(AQM_ADDRESS, 0x00, 0x01);//ï¿½@ï¿½ï¿½ÊƒNï¿½ï¿½ï¿½A
         control.waitMicros(2000);
         initialized = true;
     }
@@ -152,7 +152,7 @@ namespace lcd {
         if (!initialized) {
               initAQM();
         }
-        i2cwrite(AQM_ADDRESS, 0x00, 0x01);//@‰æ–ÊƒNƒŠƒA
+        i2cwrite(AQM_ADDRESS, 0x00, 0x01);//ï¿½@ï¿½ï¿½ÊƒNï¿½ï¿½ï¿½A
         control.waitMicros(2000);
     }
 } 
